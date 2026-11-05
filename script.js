@@ -1,101 +1,92 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Menu Mobile (Hamburger)
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
 
-  // Visualização de seção ativa no menu conforme o scroll
-  const sections = document.querySelectorAll('section, footer');
-  const navLinks = document.querySelectorAll('.nav-links a');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
 
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      if (window.pageYOffset >= (sectionTop - 150)) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href').includes(current)) {
-        link.classList.add('active');
-      }
-    });
-  });
-
-  // Configuração do Gráfico de Rosca: Áreas de Atuação
-  const ctxAreas = document.getElementById('areasChart').getContext('2d');
-  new Chart(ctxAreas, {
-    type: 'doughnut',
-    data: {
-      labels: [
-        'Clínica e Cirurgia Pet', 
-        'Agronegócio e Grandes Animais', 
-        'Inspeção Sanitária & Saúde Pública', 
-        'Animais Silvestres / Conservação', 
-        'Pesquisa, Docência e Outros'
-      ],
-      datasets: [{
-        data: [45, 25, 15, 8, 7],
-        backgroundColor: [
-          '#10b981',
-          '#064e3b',
-          '#047857',
-          '#34d399',
-          '#a7f3d0'
-        ],
-        borderWidth: 2,
-        borderColor: '#ffffff'
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'bottom',
-          labels: {
-            font: { family: 'Plus Jakarta Sans', size: 12 },
-            padding: 15
-          }
-        }
-      }
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
     }
-  });
 
-  // Configuração do Gráfico de Linhas: Crescimento do Setor
-  const ctxGrowth = document.getElementById('growthChart').getContext('2d');
-  new Chart(ctxGrowth, {
-    type: 'line',
-    data: {
-      labels: ['2020', '2021', '2022', '2023', '2024', '2025', '2026 (Projeção)'],
-      datasets: [{
-        label: 'Faturamento do Setor Pet / Agro (em Bilhões R$)',
-        data: [40.8, 51.9, 60.2, 68.7, 76.3, 84.1, 92.5],
-        borderColor: '#10b981',
-        backgroundColor: 'rgba(16, 185, 129, 0.1)',
-        fill: true,
-        tension: 0.3,
-        pointBackgroundColor: '#064e3b',
-        pointRadius: 5
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'bottom',
-          labels: {
-            font: { family: 'Plus Jakarta Sans', size: 12 }
-          }
-        }
-      },
-      scales: {
-        y: {
-          beginAtZero: false,
-          grid: { color: '#f1f5f9' }
-        },
-        x: {
-          grid: { display: false }
-        }
-      }
+    // 2. Gráfico de Rosca - Distribuição por Espécie e Área
+    const ctxAreas = document.getElementById('areasChart');
+    if (ctxAreas) {
+        new Chart(ctxAreas.getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Cães e Gatos (Pet)', 'Grandes Animais (Equinos/Bovinos)', 'Saúde Pública & Inspeção', 'Aves, Répteis & Silvestres', 'Pesquisa & Biotecnologia'],
+                datasets: [{
+                    data: [42, 24, 16, 11, 7],
+                    backgroundColor: [
+                        '#0d9488', // Teal
+                        '#f59e0b', // Amber (Equinos)
+                        '#2563eb', // Blue
+                        '#9333ea', // Purple (Exóticos)
+                        '#f43f5e'  // Rose
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            font: { family: "'Segoe UI', sans-serif", size: 12 }
+                        }
+                    }
+                }
+            }
+        });
     }
-  });
+
+    // 3. Gráfico de Linha - Crescimento do Setor
+    const ctxTrend = document.getElementById('trendChart');
+    if (ctxTrend) {
+        new Chart(ctxTrend.getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: ['2021', '2022', '2023', '2024', '2025', '2026 (Proj.)'],
+                datasets: [{
+                    label: 'Faturamento em R$ Bilhões',
+                    data: [51.9, 60.2, 68.7, 76.5, 84.1, 93.5],
+                    borderColor: '#f97316',
+                    backgroundColor: 'rgba(249, 115, 22, 0.12)',
+                    fill: true,
+                    tension: 0.35,
+                    pointBackgroundColor: '#f97316',
+                    pointRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        grid: { color: '#f1f5f9' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+    }
 });
