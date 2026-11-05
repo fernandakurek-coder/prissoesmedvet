@@ -1,65 +1,257 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feira de Profissões | Medicina Veterinária</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- Google Fonts & Font Awesome Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Chart.js para Gráficos Interativos -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicina Veterinária | Feira de Profissões</title>
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js para Gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-  <!-- Navegação -->
-  <header>
-    <div class="container nav-container">
-      <a href="#home" class="logo">
-        <i class="fa-solid fa-stethoscope">
-          <i class="fa-solid fa-paw inner-paw"></i>
-        </i>
-        <div class="logo-text">
-          <span>Medicina</span>
-          <span>Veterinária</span>
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <i class="fa-solid fa-paw"></i>
+                <span>MedVet Viva</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#galeria">Diversidade Animal</a></li>
+                <li><a href="#historico">História</a></li>
+                <li><a href="#mercado">Mercado & Dados</a></li>
+                <li><a href="#creditos">Créditos</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
-      </a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#home" class="active">Apresentação</a></li>
-          <li><a href="#historia">Fatos Históricos</a></li>
-          <li><a href="#panorama">Panorama & Mercado</a></li>
-          <li><a href="#atuacao">Áreas de Atuação</a></li>
-          <li><a href="#creditos">Créditos</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    </nav>
 
-  <main>
-    <!-- Seção Home / Apresentação -->
-    <section id="home" class="hero-section">
-      <div class="container hero-content">
-        <div class="hero-badge">
-          <i class="fa-solid fa-microscope"></i> Projeto Interdisciplinar • Feira de Profissões
+    <main>
+        <!-- Home / Apresentação -->
+        <section id="home" class="hero-section">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="badge">🚀 Feira de Profissões 2026</span>
+                    <h1>Medicina Veterinária</h1>
+                    <p class="slogan">"A arte de cuidar da vida em todas as suas formas e cores."</p>
+                    <p class="description">
+                        A Medicina Veterinária abrange desde pets domésticos até grandes animais de fazenda, animais silvestres e répteis exóticos. O médico veterinário é peça-chave na saúde pública, preservação da biodiversidade, medicina preventiva e inovação científica.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#galeria" class="btn btn-primary">Ver Animais Atendidos</a>
+                        <a href="#mercado" class="btn btn-secondary">Explorar Mercado</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&q=80&w=800" alt="Veterinário cuidando de um cão alegre" loading="lazy">
+                        <div class="floating-card flex-card">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                            <span>Cuidado Multiespécie</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nova Seção: Galeria de Espécies Atendidas -->
+        <section id="galeria" class="section bg-gradient-light">
+            <div class="container">
+                <div class="section-title">
+                    <span class="sub-tag">Reino Animal</span>
+                    <h2>Espécies e Especialidades</h2>
+                    <p>Conheça as principais áreas de atuação clínica e manejo por espécie</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <!-- Card Cachorro -->
+                    <div class="animal-card card-dog">
+                        <div class="card-img-holder">
+                            <img src="https://images.unsplash.com/photo-1534361960057-19889db9861e?auto=format&fit=crop&q=80&w=600" alt="Cachorro saudável feliz">
+                            <span class="animal-tag">Animais de Companhia</span>
+                        </div>
+                        <div class="card-body">
+                            <h3><i class="fa-solid fa-dog"></i> Cães e Gatos</h3>
+                            <p>Clínica médica, procedimentos cirúrgicos, dermatologia, cardiologia e cuidados intensivos para animais domésticos.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card Cavalo -->
+                    <div class="animal-card card-horse">
+                        <div class="card-img-holder">
+                            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&q=80&w=600" alt="Cavalo em campo aberto">
+                            <span class="animal-tag tag-amber">Grandes Animais</span>
+                        </div>
+                        <div class="card-body">
+                            <h3><i class="fa-solid fa-horse"></i> Equinos</h3>
+                            <p>Medicina esportiva equina, ortopedia, odontologia veterinária, reprodução assistida e manejo de haras.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card Papagaio / Aves -->
+                    <div class="animal-card card-bird">
+                        <div class="card-img-holder">
+                            <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&q=80&w=600" alt="Papagaio colorido">
+                            <span class="animal-tag tag-blue">Aves Exóticas</span>
+                        </div>
+                        <div class="card-body">
+                            <h3><i class="fa-solid fa-feather"></i> Papagaios e Aves</h3>
+                            <p>Manejo nutricional, medicina de silvestres, conservação de espécies nativas e tratamento de patologias aviárias.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card Cobra / Répteis -->
+                    <div class="animal-card card-reptile">
+                        <div class="card-img-holder">
+                            <img src="https://images.unsplash.com/photo-1531386151447-fd76ad50012f?auto=format&fit=crop&q=80&w=600" alt="Cobra em galho de árvore">
+                            <span class="animal-tag tag-purple">Répteis e Exóticos</span>
+                        </div>
+                        <div class="card-body">
+                            <h3><i class="fa-solid fa-staff-snake"></i> Cobras e Répteis</h3>
+                            <p>Herpetologia clínica, controle de temperatura e ambiente, extração segura de venenos e preservação da fauna.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fatos Históricos -->
+        <section id="historico" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <span class="sub-tag">Linha do Tempo</span>
+                    <h2>Fatos Históricos</h2>
+                    <p>Origem, evolução tecnológica e marcos da ciência veterinária</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon icon-gold"><i class="fa-solid fa-scroll"></i></div>
+                        <div class="timeline-content">
+                            <span class="date">~1900 a.C.</span>
+                            <h3>Papiro de Kahun (Antigo Egito)</h3>
+                            <p>Primeiro registro documentado sobre medicina veterinária. Detalhava tratamentos de gado, aves e cães de caça no Egito Antigo.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon icon-teal"><i class="fa-solid fa-building-columns"></i></div>
+                        <div class="timeline-content">
+                            <span class="date">1762</span>
+                            <h3>Primeira Faculdade do Mundo</h3>
+                            <p>Fundada em Lyon, na França, por Claude Bourgelat. Marcou a oficialização do ensino universitário veterinário no planeta.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon icon-blue"><i class="fa-solid fa-flag"></i></div>
+                        <div class="timeline-content">
+                            <span class="date">1910</span>
+                            <h3>Regulamentação no Brasil</h3>
+                            <p>Surgimento dos primeiros cursos no país, impulsionados pela necessidade de controle sanitário do rebanho e produção nacional.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon icon-coral"><i class="fa-solid fa-dna"></i></div>
+                        <div class="timeline-content">
+                            <span class="date">Século XXI</span>
+                            <h3>Saúde Única (One Health)</h3>
+                            <p>Conexão direta entre a saúde animal, humana e do meio ambiente, aliada a exames de imagem modernos e biotecnologia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Panorama Atual e Mercado -->
+        <section id="mercado" class="section bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <span class="sub-tag">Economia & Carreira</span>
+                    <h2>Panorama Atual e Mercado</h2>
+                    <p>Métricas de empregabilidade, faixas salariais e tendências do setor</p>
+                </div>
+
+                <!-- Cards de Estatísticas -->
+                <div class="stats-grid">
+                    <div class="stat-card stat-emerald">
+                        <div class="stat-icon-bg"><i class="fa-solid fa-money-bill-wave"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-value">R$ 4.500 - R$ 12.000+</span>
+                            <span class="stat-label">Média Salarial (Inicial / Sênior)</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card stat-amber">
+                        <div class="stat-icon-bg"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-value">+12.4%</span>
+                            <span class="stat-label">Crescimento Anual do Setor</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card stat-blue">
+                        <div class="stat-icon-bg"><i class="fa-solid fa-user-doctor"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-value">+140 mil</span>
+                            <span class="stat-label">Profissionais Ativos no Brasil</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráficos -->
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3><i class="fa-solid fa-chart-pie"></i> Áreas de Atuação Profissional</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="areasChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3><i class="fa-solid fa-chart-line"></i> Projeção de Faturamento do Setor (R$ Bi)</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="trendChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé / Créditos -->
+    <footer id="creditos" class="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-paw"></i> MedVet Feira 2026
+                </div>
+                <p><strong>Estudante:</strong> [Seu Nome Completo]</p>
+                <p><strong>Turma:</strong> [Sua Turma]</p>
+                <p><strong>Disciplina:</strong> Projeto Interdisciplinar</p>
+            </div>
+            <div class="footer-links">
+                <h4>Acesso Rápido ao Projeto</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-github"></i> Repositório do Código</a></li>
+                    <li><a href="#"><i class="fa-solid fa-file-pdf"></i> Relatório de Pesquisa</a></li>
+                </ul>
+            </div>
         </div>
-        <h1>Cuidando da Vida em Toda a sua Diversidade</h1>
-        <p class="slogan">"Saber Curar, Prevenir para Proteger: A Ciência a Serviço dos Animais, da Saúde Pública e do Planeta."</p>
-        
-        <div class="hero-cards">
-          <article class="info-card">
-            <div class="card-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-            <h3>Rotina e Atribuições</h3>
-            <p>Diagnóstico de doenças, cirurgias complexas, prescrição médica, vacinação e acompanhamento do bem-estar de animais de pequeno e grande porte.</p>
-          </article>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Feira de Profissões - Registro Oficial do Stand de Medicina Veterinária.</p>
+        </div>
+    </footer>
 
-          <article class="info-card">
-            <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3>Saúde Única (One Health)</h3>
-            <p>Atuação crucial na prevenção de zoonoses (doenças transmissíveis entre animais e humanos) e inspeção de alimentos de origem animal.</p>
-          </article>
-
-          <article class="info-card">
+    <!-- Script Externo -->
+    <script src="script.js"></script>
+</body>
+</html>
